@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: febbox-addon
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CONFIG_SECRET
+        sync: false
+      - key: TMDB_API_KEY
+        sync: false

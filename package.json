@@ -1,0 +1,29 @@
+{
+  "name": "febbox-addon",
+  "version": "1.0.0",
+  "description": "Self-hosted Stremio addon that streams movies and TV shows from FebBox's catalog using your own account.",
+  "main": "src/app/server.js",
+  "scripts": {
+    "start": "node src/app/server.js",
+    "build": "npm --prefix web install --include=dev && npm --prefix web run build",
+    "test": "jest --testPathIgnorePatterns=test/manual",
+    "test:manual": "jest test/manual",
+    "lint": "node -e \"require('child_process').execSync('node --check src/app/index.js && node --check src/app/server.js', {stdio: 'inherit'})\""
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "string-similarity": "^4.0.4"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "nock": "^14.0.17",
+    "supertest": "^7.2.2"
+  }
+}

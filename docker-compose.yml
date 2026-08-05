@@ -1,0 +1,10 @@
+services:
+  febbox-addon:
+    build: .
+    image: febbox-addon:latest
+    container_name: febbox-addon
+    ports:
+      - "7000:7000"
+    env_file:
+      - .env
+    restart: unless-stopped
